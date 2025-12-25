@@ -13,14 +13,16 @@ class CalculatorLogic {
       _result = '';
     } else if (buttonText == '=') {
       try {
-        Parser p = Parser();
-        Expression exp = p.parse(_expression
-            .replaceAll('×', '*')
-            .replaceAll('÷', '/')
-            .replaceAll('π', '3.1415926535897932')
-            .replaceAll('√', 'sqrt')
-            .replaceAll('x²', '^2')
-            .replaceAll('mod', '%'));
+        var p = GrammarParser();
+        Expression exp = p.parse(
+          _expression
+              .replaceAll('×', '*')
+              .replaceAll('÷', '/')
+              .replaceAll('π', '3.1415926535897932')
+              .replaceAll('√', 'sqrt')
+              .replaceAll('x²', '^2')
+              .replaceAll('mod', '%'),
+        );
         ContextModel cm = ContextModel();
         _result = exp.evaluate(EvaluationType.REAL, cm).toString();
       } catch (e) {

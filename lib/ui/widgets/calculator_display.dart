@@ -28,10 +28,7 @@ class CalculatorDisplay extends StatelessWidget {
             ),
             Text(
               result,
-              style: const TextStyle(
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

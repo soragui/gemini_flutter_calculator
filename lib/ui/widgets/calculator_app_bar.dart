@@ -15,7 +15,12 @@ class CalculatorAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             IconButton(icon: const Icon(Icons.undo), onPressed: onUndo),
             const Text('Basic'),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
+            IconButton(
+              onPressed: () async {
+                await windowManager.close();
+              },
+              icon: const Icon(Icons.close),
+            ),
           ],
         ),
       ),

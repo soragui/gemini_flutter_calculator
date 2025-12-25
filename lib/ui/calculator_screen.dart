@@ -55,8 +55,15 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 if (buttonText == '=') {
                   color = equalColor;
                   textColor = equalTextColor;
-                } else if (['C', '(', ')', 'mod', 'π', '√', 'x²']
-                    .contains(buttonText)) {
+                } else if ([
+                  'C',
+                  '(',
+                  ')',
+                  'mod',
+                  'π',
+                  '√',
+                  'x²',
+                ].contains(buttonText)) {
                   textColor = specialColor;
                 } else if (['÷', '×', '-', '+', '%'].contains(buttonText)) {
                   textColor = operatorColor;
